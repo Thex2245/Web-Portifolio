@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html, body {
+    overflow-x: hidden;
+    height: 200vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background-color: #000014;
+    background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.096) 0.25px, transparent 1px), /* Linhas horizontais */
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.096) 0.25px, transparent 1px); /* Linhas verticais */
+background-size: 50px 50px; /* Tamanho das linhas */
+}
+
+.grid-container {
+    display: grid; /* Ativa o layout de grade */
+    grid-template-columns: repeat(10, 1fr); /* Cria 10 colunas com a mesma largura */
+    grid-template-rows: repeat(10, 1fr); /* Cria 10 linhas com a mesma altura */
+    height: 100vh; /* Define a altura da grade como 100% da altura da viewport */
+}
+
+.grid-container > * {
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px sólida para cada célula */
+    padding: 20px; /* Adiciona um espaçamento interno para o conteúdo */
+}
+
+nav {
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barranvagecao {
+    position: fixed;
+    height: 50px;
+    width: auto;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid #252799;
+    border-radius: 25px;
+    padding: 0 35px 0 35px;
+    flex-direction: row;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000
+    
+}
+
+ul {
+    width: auto;
+    height: 27px;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    position: relative;
+    display: inline-block;
+    
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #252799;
+    transition: width 0.3s ease;
+}
+
+li:hover::before {
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+    color: #252799  ;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.linkedin {
+    margin-right: 5px;
+}
+
+.git {
+    margin-right: 5px;
+}
+
+.py {
+    margin-right: 5px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+.conteudo {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bem-vindo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #ffff;
+    margin: 0;
+    position: relative;
+    bottom: -20px;
+    opacity: 0;
+    animation: fadeInAnimation 1.5s ease-in forwards; 
+    cursor: default;
+}
+
+.portifolio {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #252799;
+    font-size: 90px;
+    animation: fadeInAnimation 1.5s ease-in forwards; 
+    opacity: 0;
+    margin: 0;
+    cursor: default;
+}
+
+
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.svg {
+    color: #fff;
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        display: none;
+    }
+
+    .linkedin {
+        margin: 0;
+    }
+
+    .py {
+        margin: 0;
+    }
+
+    .git {
+        margin: 0;
+    }
+
+    .bem-vindo {
+        font-size: 12px;
+        bottom: -10px;
+    }
+
+    .portifolio {
+        
+        font-size: 50px;
+    }
+}
+
+/* Botão superfoda */
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button.learn-more {
+    width: 12rem;
+    height: auto;
+}
+
+button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #050522;
+    border-radius: 1.625rem;
+    border: 1px solid #252799;
+}
+
+button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #ffff;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button:hover .circle {
+    width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+
+.button-text {
+    color: #252799;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+}
